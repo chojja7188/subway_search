@@ -40,6 +40,7 @@ class _MainScreenState extends State<MainScreen> {
           Container(
             padding: const EdgeInsets.all(50.0),
             child: TextField(
+              onTapOutside: (value) => FocusManager.instance.primaryFocus?.unfocus(),
               controller: viewModel.textEditingController,
               decoration: InputDecoration(
                   border: OutlineInputBorder(
@@ -58,7 +59,9 @@ class _MainScreenState extends State<MainScreen> {
             ),
           ),
           const SizedBox(height: 10.0),
-          Column(
+          viewModel.isLoading
+              ? Align(child: CircularProgressIndicator())
+              : Column(
             children: viewModel.realTimeArrivalList.map((e) => Padding(
               padding: const EdgeInsets.only(bottom: 8),
               child: Row(

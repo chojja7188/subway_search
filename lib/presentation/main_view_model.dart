@@ -11,8 +11,10 @@ class MainViewModel with ChangeNotifier {
   List<RealtimeArrival> realTimeArrivalList = [];
   TextEditingController textEditingController = TextEditingController();
   int time = 0;
+  bool isLoading = false;
 
   void fetchData() async {
+    isLoading = true;
     String stationName = textEditingController.text;
     if (stationName.endsWith('역')) {
       stationName = stationName.substring(0, stationName.length - 1);
@@ -20,6 +22,7 @@ class MainViewModel with ChangeNotifier {
 
     realTimeArrivalList = await _repository.getRealtimeArrivalList(stationName);
     time = 0;
+    isLoading = false;
     notifyListeners();
   }
 
