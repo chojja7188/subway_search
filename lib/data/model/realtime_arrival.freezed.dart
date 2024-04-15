@@ -42,7 +42,7 @@ mixin _$RealtimeArrival {
   String get recptnDt => throw _privateConstructorUsedError;
   String get arvlMsg2 => throw _privateConstructorUsedError;
   String get arvlMsg3 => throw _privateConstructorUsedError;
-  String get arvlCd => throw _privateConstructorUsedError;
+  int get arvlCd => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -79,7 +79,7 @@ abstract class $RealtimeArrivalCopyWith<$Res> {
       String recptnDt,
       String arvlMsg2,
       String arvlMsg3,
-      String arvlCd});
+      int arvlCd});
 }
 
 /// @nodoc
@@ -211,7 +211,7 @@ class _$RealtimeArrivalCopyWithImpl<$Res, $Val extends RealtimeArrival>
       arvlCd: null == arvlCd
           ? _value.arvlCd
           : arvlCd // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
     ) as $Val);
   }
 }
@@ -247,7 +247,7 @@ abstract class _$$RealtimeArrivalImplCopyWith<$Res>
       String recptnDt,
       String arvlMsg2,
       String arvlMsg3,
-      String arvlCd});
+      int arvlCd});
 }
 
 /// @nodoc
@@ -377,7 +377,7 @@ class __$$RealtimeArrivalImplCopyWithImpl<$Res>
       arvlCd: null == arvlCd
           ? _value.arvlCd
           : arvlCd // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
     ));
   }
 }
@@ -458,7 +458,7 @@ class _$RealtimeArrivalImpl implements _RealtimeArrival {
   @override
   final String arvlMsg3;
   @override
-  final String arvlCd;
+  final int arvlCd;
 
   @override
   String toString() {
@@ -580,7 +580,7 @@ abstract class _RealtimeArrival implements RealtimeArrival {
       required final String recptnDt,
       required final String arvlMsg2,
       required final String arvlMsg3,
-      required final String arvlCd}) = _$RealtimeArrivalImpl;
+      required final int arvlCd}) = _$RealtimeArrivalImpl;
 
   factory _RealtimeArrival.fromJson(Map<String, dynamic> json) =
       _$RealtimeArrivalImpl.fromJson;
@@ -630,7 +630,7 @@ abstract class _RealtimeArrival implements RealtimeArrival {
   @override
   String get arvlMsg3;
   @override
-  String get arvlCd;
+  int get arvlCd;
   @override
   @JsonKey(ignore: true)
   _$$RealtimeArrivalImplCopyWith<_$RealtimeArrivalImpl> get copyWith =>

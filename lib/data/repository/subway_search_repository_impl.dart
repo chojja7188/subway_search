@@ -9,10 +9,15 @@ class SubwaySearchRepositoryImpl implements SubwaySearchRepository{
 
   @override
   Future<List<RealtimeArrival>> getRealtimeArrivalList(String stationName) async {
-    final response = await _api.getRealtimeArrival(stationName);
+    try {
+      final response = await _api.getRealtimeArrival(stationName);
 
-    final List<RealtimeArrival> realtimeArrivalList = response.map((e) => e.toRealtimeArrival()).toList();
+      final List<RealtimeArrival> realtimeArrivalList = response.map((e) => e.toRealtimeArrival()).toList();
 
-    return realtimeArrivalList;
+      return realtimeArrivalList;
+    } catch(e) {
+      return [];
+    }
+    ;
   }
 }

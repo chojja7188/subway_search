@@ -26,7 +26,7 @@ extension ToRealtimeArrival on RealtimeArrivalList {
         recptnDt: recptnDt ?? '',
         arvlMsg2: arvlMsg2 ?? '',
         arvlMsg3: arvlMsg3 ?? '',
-        arvlCd: arvlCd ?? ''
+        arvlCd: int.tryParse(arvlCd!) ?? 0
     );
   }
 }

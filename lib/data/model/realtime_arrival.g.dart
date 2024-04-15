@@ -31,7 +31,7 @@ _$RealtimeArrivalImpl _$$RealtimeArrivalImplFromJson(
       recptnDt: json['recptnDt'] as String,
       arvlMsg2: json['arvlMsg2'] as String,
       arvlMsg3: json['arvlMsg3'] as String,
-      arvlCd: json['arvlCd'] as String,
+      arvlCd: json['arvlCd'] as int,
     );
 
 Map<String, dynamic> _$$RealtimeArrivalImplToJson(

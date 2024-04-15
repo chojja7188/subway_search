@@ -29,7 +29,7 @@ class RealtimeArrival with _$RealtimeArrival {
     required String recptnDt,
     required String arvlMsg2,
     required String arvlMsg3,
-    required String arvlCd,
+    required int arvlCd,
   }) = _RealtimeArrival;
 
   factory RealtimeArrival.fromJson(Map<String, Object?> json) => _$RealtimeArrivalFromJson(json);
