@@ -8,8 +8,8 @@ class SubwaySearchRepositoryImpl implements SubwaySearchRepository{
   SubwaySearchRepositoryImpl({required SubwaySearchApi api}) : _api = api;
 
   @override
-  Future<List<RealtimeArrival>> getRealtimeArrivalList() async {
-    final response = await _api.getRealtimeArrival();
+  Future<List<RealtimeArrival>> getRealtimeArrivalList(String stationName) async {
+    final response = await _api.getRealtimeArrival(stationName);
 
     final List<RealtimeArrival> realtimeArrivalList = response.map((e) => e.toRealtimeArrival()).toList();
 

@@ -7,9 +7,11 @@ class MainViewModel with ChangeNotifier {
   MainViewModel({required SubwaySearchRepositoryImpl repository}) : _repository = repository;
 
   List<RealtimeArrival> realTimeArrivalList = [];
+  TextEditingController textEditingController = TextEditingController();
+
 
   void fetchData() async {
-    realTimeArrivalList = await _repository.getRealtimeArrivalList();
+    realTimeArrivalList = await _repository.getRealtimeArrivalList(textEditingController.text);
     notifyListeners();
   }
 }

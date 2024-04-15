@@ -11,7 +11,36 @@ class MainScreen extends StatelessWidget {
     final viewModel = context.watch<MainViewModel>();
 
     return Scaffold(
-      body: Container()
+      body: Column(
+        children: [
+          Container(
+            padding: const EdgeInsets.all(50.0),
+            child: TextField(
+              controller: viewModel.textEditingController,
+              decoration: InputDecoration(
+                  hintText: '역 이름을 입력하세요',
+                  suffixIcon: IconButton(
+                    onPressed: () {
+                      viewModel.fetchData();
+                    },
+                    icon: const Icon(Icons.search),
+                  )),
+            ),
+          ),
+          const SizedBox(height: 10.0),
+          Column(
+            children: viewModel.realTimeArrivalList.map((e) => Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Text(e.subwayId),
+                Text(e.trainLineNm),
+                Text('${e.barvlDt}초 후'),
+              ],
+            )).toList(),
+          )
+        ],
+      ),
+
     );
   }
 }
