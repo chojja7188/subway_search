@@ -1,10 +1,10 @@
-class SubwaySearch {
-  SubwaySearch({
+class SubwaySearchDto {
+  SubwaySearchDto({
     this.errorMessage,
     this.realtimeArrivalList,
   });
 
-  SubwaySearch.fromJson(dynamic json) {
+  SubwaySearchDto.fromJson(dynamic json) {
     errorMessage = json['errorMessage'] != null
         ? ErrorMessage.fromJson(json['errorMessage'])
         : null;
