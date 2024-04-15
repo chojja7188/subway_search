@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:subway_search/data/data_source/subway_search_api.dart';
+import 'package:subway_search/data/repository/subway_search_repository_impl.dart';
 import 'package:subway_search/presentation/main_screen.dart';
 
 import 'presentation/main_view_model.dart';
@@ -37,7 +39,9 @@ class MyApp extends StatelessWidget {
       ),
       home: ChangeNotifierProvider(
           create: (_) {
-            return MainViewModel();
+            return MainViewModel(
+                repository: SubwaySearchRepositoryImpl(api: SubwaySearchApi())
+            );
           },
           child: MainScreen()),
     );

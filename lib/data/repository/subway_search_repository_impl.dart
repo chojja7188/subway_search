@@ -4,7 +4,8 @@ import 'package:subway_search/data/model/realtime_arrival.dart';
 import 'package:subway_search/data/repository/subway_search_repository.dart';
 
 class SubwaySearchRepositoryImpl implements SubwaySearchRepository{
-  final SubwaySearchApi _api = SubwaySearchApi();
+  final SubwaySearchApi _api;
+  SubwaySearchRepositoryImpl({required SubwaySearchApi api}) : _api = api;
 
   @override
   Future<List<RealtimeArrival>> getRealtimeArrivalList() async {
