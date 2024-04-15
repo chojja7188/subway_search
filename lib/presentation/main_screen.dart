@@ -67,7 +67,7 @@ class _MainScreenState extends State<MainScreen> {
                   SizedBox(width: 16),
                   Expanded(
                     flex: 1,
-                      child: Text(RailService().getRailText(e.subwayId))
+                      child: RailService().getRailText(e.subwayId)
                   ),
                   Expanded(
                     flex: 2,
